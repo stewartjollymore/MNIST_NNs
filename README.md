@@ -7,4 +7,6 @@ There will be various levels for what "from scratch" means. My first attempt wil
 the use of TF NN architecture, these attempts can be found in the [Numpy NNs](https://github.com/stewartjollymore/MNIST_NNs/tree/main/Numpy%20NNs) folder.
 
 I will also recreate all "from scratch" models using TF in the [TF NNs] folder
+
+
 **in dev**
