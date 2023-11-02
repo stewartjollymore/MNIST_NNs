@@ -4,5 +4,5 @@ I have not implimented any TF or PT frameworks on these NNs and they serve to di
 of NN structure.
 
 
-I do use the `np.dot` functionality but hand code all activation functions and their derivatives along with
+I do use the `np.dot()` functionality but hand code all activation functions and their derivatives along with
 the use of custom developed error metrics and their gradient functions as well.
