@@ -21,18 +21,21 @@ class Convole:
     C = input.shape[0]
     H = int((input.shape[1] - self.Ker)) + 1
     W = int((input.shape[2] - self.Ker)) + 1
-
     out = np.zeros((C, H, W))
-    for c in range(n_C): # For each channel.
-      for h in range(n_H): # Slide the filter vertically.
-        h_start = h * self.s
-        h_end = h_start + self.f
-        
-        for w in range(n_W): # Slide the filter horizontally.                
-          w_start = w * self.s
-          w_end = w_start + self.f
 
-                    # Element wise multiplication + sum.
-                    out[i, c, h, w] = np.sum(X[i, :, h_start:h_end, w_start:w_end] 
-                                    * self.W['val'][c, ...]) + self.b['val'][c]
+    # 
+    for c in range(C): 
+
+      #Setting the limits for each horizontal pass of the kernal
+      for h in range(H): 
+        h_start = h
+        h_end = h_start + self.Ker
+        
+        for w in range(W):                 
+          w_start = w 
+          w_end = w_start + self.Ker
+
+          #
+          out[c, h, w] = np.sum(input[:, h_start:h_end, w_start:w_end] * self.weights[c,:,:,:]) + self.bias[c]
+          
     return out 
